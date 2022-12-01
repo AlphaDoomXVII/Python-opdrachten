@@ -1,5 +1,34 @@
-leeftijd = int(input("uw leeftijd hier "))
+import sys
 
-if leeftijd >= 18:
-    print("u bent oud genoeg om te rijden")
-else: print("u mag bent niet oud genoeg om te rijden")
+leeftijd = 0
+
+while True:
+    try:
+        leeftijd = int(input("Typ hier uw leeftijd: "))
+    except ValueError:
+        print("Typ AUB een getal in")
+        break
+    if leeftijd >= 18:
+        print("U bent oud genoeg om te rijden")
+        break
+    elif leeftijd <= 17: 
+        print("U bent niet oud genoeg om te rijden")
+        break
+    else: break
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+

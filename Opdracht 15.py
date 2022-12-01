@@ -1,10 +1,16 @@
 import random
+import math
 
 aspelers = int(input("hoeveel spelers doen er mee ")) 
 
-spelers = str(input("vul hier de naam in "))
-while spelers == aspelers:
-    spelers* aspelers
+while aspelers:
+    spelers = str(input("vul hier de naam in " ))
+    
+    spelers = []
+
+    spelers = spelers*aspelers 
+
+
 
 
 
