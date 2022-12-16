@@ -1,13 +1,27 @@
-import datetime
-from dateutil. relativedelta import relativedelta
+import datetime as dt
+import dateutil
+from dateutil.relativedelta import relativedelta
 
-x = datetime.datetime.now()
-print(x.strftime("%d %m %Y"))
+date_now = dt.date.today().strftime("%d %m %Y")
+date_y18 = dt.date.today()-relativedelta(years=18)
+date_y18 = date_y18.strftime("%d %m %Y") 
+date_format = "%d %m %Y"
 
-leeftijd = int(input("Typ uw geboortedatum hier zoals hierboven eruit ziet "))
+x = dt.datetime.now()
+print("De datum van vandaag is " + x.strftime("%d %m %Y"))
 
-if leeftijd >= datetime.datetime.today()-relativedelta(years=18) and datetime.datetime.now():
+while True:
+    try:
+        leeftijd = (input("Vul hier uw geboorte datum in als DD MM YYYY: "))
+
+        leeftijd = dt.datetime.strptime(leeftijd, date_format)
+    except ValueError:
+        print("Typ AUB een getal in")
+        break
+    if leeftijd >= dt.datetime.strptime(date_y18, date_format) and leeftijd <= dt.datetime.strptime(date_now, date_format):
+        print("U bent niet oud genoeg om te rijden")
+        break
+    else: leeftijd
     print("U bent oud genoeg om te rijden")
-else: print("U mag bent niet oud genoeg om te rijden")
-
-print(leeftijd)
+    break
+    
